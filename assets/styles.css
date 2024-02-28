@@ -32,8 +32,19 @@ h2{
 }
 .item li{
     display: block;
-    padding: 8px 0;
-    font-size: 20px;
+    padding: 12px 0;
+    font-size: 18px;
+    position: relative;
+    border-top: 1px solid #b7b7b7;
+}
+
+.item li:hover{
+    background-color: #ebffe8;
+}
+
+.item li:before{
+    content: attr(data-index);
+    width: 30px;
 }
 
 .item li a{
@@ -46,11 +57,8 @@ h2{
     color: rgb(133, 0, 0);
 }
 
-.item li span{
+.item li > *{
     display: inline-block;
-    margin: 0 0 0 10px;
+    margin: 0 10px 0 0;
     cursor: pointer;
-}
-.item li span:hover{
-    transform: scale(1.2);
 }
