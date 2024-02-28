@@ -1,14 +1,19 @@
 document.addEventListener('DOMContentLoaded', function(){
 
-    const path = './dist/'
+    const path = './dist'
 
     function copy (select){
         const spans = document.querySelectorAll( select );
+        const href = document.location.href;
+
         spans.forEach(span => {
             span.onclick = function() {
                 document.execCommand("copy");
             }
             let text = span.getAttribute("data-copy") || false;
+            text = text.replace('./','');
+            text = href + text;
+            
             span.addEventListener("copy", function(event) {
                 event.preventDefault();
                 if( text!='' && text ){
@@ -39,7 +44,7 @@ document.addEventListener('DOMContentLoaded', function(){
 
             let btnCopyVideo = video ? `<span class="copy" data-copy="${path}/${dir}/${element}.${video}">Copy video</span>` : '';
             let btnOpenVideo = video ? `<a href="${path}/${dir}/${element}.${video}" target="_blank">Open video</a>` : '';
-            
+
             list += `
                     <li data-index="${index+1})">
                         <a href="${path}/${dir}/${element}.${format}" target="_blank">${element}</a>
