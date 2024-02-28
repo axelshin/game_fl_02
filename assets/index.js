@@ -4,7 +4,8 @@ document.addEventListener('DOMContentLoaded', function(){
 
     function copy (select){
         const spans = document.querySelectorAll( select );
-        const href = document.location.href;
+        let href = document.location.href;
+        href = href.replace('https','http');
 
         spans.forEach(span => {
             span.onclick = function() {
