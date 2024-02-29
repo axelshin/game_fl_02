@@ -161,11 +161,40 @@ document.addEventListener('DOMContentLoaded', function(){
     let arr_04 = [
         'mario',
         'tetris',
+        'nfs',
         'skyrim',
-        'aladdin',
         'robocop',
         'prekrasnoe_dalyoko',
         'ori',
+    ]
+
+    let name_05 = "5. OST Фильмы/сериалы";
+    let dir_05 = "05_ost";
+    let format_05 = "mp3";
+    let arr_05 = [
+        'ameli',
+        'matrica',
+        'oblivion',
+        'tvin_piks',
+        'armageddon',
+        'rokki',
+        'generaly_peschanyh_karerov',
+
+        'sverhestestvennoe',
+        'velikij_getsbi',
+        'zvezdnye_voiny',
+        'igrushka',
+        'ultimatum_borna',
+        'komissar_reks',
+        'lico_so_shramom',
+        
+        'sumerki',
+        'missiya_nevypolnima',
+        'telohranitel',
+        '50_ottenkov_serogo',
+        'ot_zakata_do_rassveta',
+        'tancor_disko',
+        'beovulf',
     ]
 
     let list01 = { name: name_01, dir: dir_01, format: format_01, arr: arr_01, audio: 'mp3', }
@@ -179,6 +208,9 @@ document.addEventListener('DOMContentLoaded', function(){
 
     let list04 = { name: name_04, dir: dir_04, format: format_04, arr: arr_04, audio: 'mp3', }
     list(list04);
+
+    let list05 = { name: name_05, dir: dir_05, format: format_05, arr: arr_05, audio: 'mp3', }
+    list(list05);
 
     copy('.copy');
 
