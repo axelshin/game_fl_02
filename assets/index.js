@@ -37,14 +37,33 @@ document.addEventListener('DOMContentLoaded', function(){
         let name = params.name || false;
         let audio = params.audio || false;
         let video = params.video || false;
+        let videoAnswer = params.videoAnswer || false;
         let img = params.img || false;
 
         // variables for function
         let list = '';
 
         arr.forEach( (element, index) => {
-            let btnCopyAudio = audio ? `<span class="copy" data-copy="${path}/${dir}/${element}.${audio}">Copy audio</span>` : '';
-            let btnOpenAudio = audio ? `<a href="${path}/${dir}/${element}.${audio}" target="_blank">Open audio</a>` : '';
+
+            let videoAns = "";
+
+            if( videoAnswer ){
+                videoAns = element.replace("_1", "_2");
+            }
+
+            let isVideo = element.indexOf("_video")!==-1 ? true: false ;
+
+            let format2 = audio;
+
+            if( isVideo ){
+                format2 = 'mp4';
+            }
+
+            let btnCopyVideoAnswer = videoAnswer ? `<span class="copy" data-copy="${path}/${dir}/${videoAns}.${video}">Copy video</span>` : '';
+            let btnOpenVideoAnswer = videoAnswer ? `<a href="${path}/${dir}/${videoAns}.${video}" target="_blank">Open video</a>` : '';
+
+            let btnCopyAudio = audio ? `<span class="copy" data-copy="${path}/${dir}/${element}.${format2}">Copy audio</span>` : '';
+            let btnOpenAudio = audio ? `<a href="${path}/${dir}/${element}.${format2}" target="_blank">Open audio</a>` : '';
 
             let btnCopyVideo = video ? `<span class="copy" data-copy="${path}/${dir}/${element}.${video}">Copy video</span>` : '';
             let btnOpenVideo = video ? `<a href="${path}/${dir}/${element}.${video}" target="_blank">Open video</a>` : '';
@@ -62,6 +81,9 @@ document.addEventListener('DOMContentLoaded', function(){
 
                         ${imgItem}
                         ${btnCopyImg}
+
+                        ${btnCopyVideoAnswer}
+                        ${btnOpenVideoAnswer}
                     </li>
                     `;
 
@@ -197,6 +219,40 @@ document.addEventListener('DOMContentLoaded', function(){
         'beovulf',
     ]
 
+    let name_06 = "6. На каком языке отрывок";
+    let dir_06 = "06_lang";
+    let format_06 = "mp3";
+    let arr_06 = [
+        'boevoi_kontinent',
+        'studzianki',
+        'dudu',
+        'myriam_fares',
+        'boris_nonte',
+        'smeloi',
+        '7_seconds',
+        
+        'aisha',
+        'gangnam_style',
+        'la_isla_bonita',
+        'u_morya_yaponskij',
+        'agiel_pyiala',
+        'gruzinskaya',
+        'mrazish_video',
+    ]
+
+    let name_07 = "7. Музыкальный плагиат";
+    let dir_07 = "07_plagiat";
+    let format_07 = "mp4";
+    let arr_07 = [
+        'a_u_reki_1',
+        'moscow_1',
+        'malinki_1',
+        'quest_pistols_1',
+        'eros_1',
+        'faded_1',
+        'kuzmin_1',
+    ]
+
     let list01 = { name: name_01, dir: dir_01, format: format_01, arr: arr_01, audio: 'mp3', }
     list(list01);
 
@@ -211,6 +267,12 @@ document.addEventListener('DOMContentLoaded', function(){
 
     let list05 = { name: name_05, dir: dir_05, format: format_05, arr: arr_05, audio: 'mp3', }
     list(list05);
+
+    let list06 = { name: name_06, dir: dir_06, format: format_06, arr: arr_06, audio: 'mp3', }
+    list(list06);
+
+    let list07 = { name: name_07, dir: dir_07, format: format_07, arr: arr_07, video: format_07, videoAnswer : true,}
+    list(list07);
 
     copy('.copy');
 
