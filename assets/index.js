@@ -253,6 +253,35 @@ document.addEventListener('DOMContentLoaded', function(){
         'kuzmin_1',
     ]
 
+    let name_08 = "8. Советское кино (м)";
+    let dir_08 = "08_sovet";
+    let format_08 = "mp3";
+    let arr_08 = [
+        'dolgaya-doroga-v-dyunah',
+        'bolshoe-kosmicheskoe-puteshestvie',
+        'ivan-vasilevich-menyaet-professiyu',
+        'formula-lyubvi-uno-momento',
+        '12-stulev-bileet-moj-parus',
+        'sluzhebnyj-roman-utro',
+        'est-tolko-mig-zemlya-sannikova',
+        
+        'sibiriada',
+        'tot-samyj-myunhauzen',
+        'moj-laskovyj-i-nezhnyj-zver',
+        'svoj-sredi-chuzhih-chuzhoj-sredi-svoih',
+        'gardemariny-vperyod-doroga',
+        '17-mgnovenij-vesny',
+        'kopejka-ya-lyublyu-tebya-do-slez',
+        
+        'usatyj-nyan',
+        'tri-mushkitera-pesnya-grafa',
+        'moskva-slezam-ne-verit',
+        'priklyucheniya-ehlektronika',
+        'vyshe-radugi-zurbagan',
+        'yunona-i-avos',
+        'shmel',
+    ]
+
     let list01 = { name: name_01, dir: dir_01, format: format_01, arr: arr_01, audio: 'mp3', }
     list(list01);
 
@@ -273,6 +302,9 @@ document.addEventListener('DOMContentLoaded', function(){
 
     let list07 = { name: name_07, dir: dir_07, format: format_07, arr: arr_07, video: format_07, videoAnswer : true,}
     list(list07);
+
+    let list08 = { name: name_08, dir: dir_08, format: format_08, arr: arr_08, audio: 'mp3', }
+    list(list08);
 
     copy('.copy');
 
